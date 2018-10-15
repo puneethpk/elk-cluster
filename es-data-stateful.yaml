@@ -81,7 +81,7 @@ spec:
           initialDelaySeconds: 20
           timeoutSeconds: 5
         volumeMounts:
-        - name: storage
+        - name: elk-data
           mountPath: /data
   volumeClaimTemplates:
   - metadata:
