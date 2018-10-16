@@ -51,10 +51,8 @@ spec:
           value: "true"
         - name: ES_JAVA_OPTS
           value: -Xms256m -Xmx256m
-        - name: discovery.zen.minimum_master_nodes
-          value: "2"
         - name: discovery.zen.ping.unicast.hosts
-          value: "elasticsearch-master.default.svc.cluster.local"
+          value: "elasticsearch-master.ethan.svc.cluster.local"
         - name: PROCESSORS
           valueFrom:
             resourceFieldRef:
