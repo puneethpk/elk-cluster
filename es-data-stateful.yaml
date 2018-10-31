@@ -39,6 +39,10 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
+#        - name: xpack.license.self_generated.type
+#          value: "trial"
+#        - name: xpack.security.enabled
+#          value: "true"
         - name: cluster.name
           value: "es-cluster"
         - name: node.master
@@ -46,13 +50,13 @@ spec:
         - name: node.data
           value: "true"
         - name: node.ingest
-          value: "false"
+          value: "true"
         - name: HTTP_ENABLE
           value: "true"
         - name: ES_JAVA_OPTS
           value: -Xms256m -Xmx256m
         - name: discovery.zen.ping.unicast.hosts
-          value: "elasticsearch-master.ethan.svc.cluster.local"
+          value: "elasticsearch.ethan.svc.cluster.local"
         - name: PROCESSORS
           valueFrom:
             resourceFieldRef:

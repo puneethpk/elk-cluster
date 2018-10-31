@@ -10,7 +10,7 @@ spec:
     matchLabels:
       component: elasticsearch
       role: master
-  serviceName: elasticsearch-master
+  serviceName: elasticsearch
   replicas: 3 
   template:
     metadata:
@@ -39,6 +39,10 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
+#        - name: xpack.license.self_generated.type
+#          value: "trial"
+#       - name: xpack.security.enabled
+#          value: "true" 
         - name: cluster.name
           value: "es-cluster"
         - name: node.master
@@ -54,7 +58,7 @@ spec:
         - name: discovery.zen.minimum_master_nodes
           value: "2"
         - name: discovery.zen.ping.unicast.hosts
-          value: "elasticsearch-master.ethan.svc.cluster.local,elasticsearch-data.ethan.svc.cluster.local"
+          value: "elasticsearch.ethan.svc.cluster.local,elasticsearch-data.ethan.svc.cluster.local"
         - name: PROCESSORS
           valueFrom:
             resourceFieldRef:
